@@ -20,6 +20,9 @@ public class TUI implements IUI{
 			out.println("Select screen:");
 			out.println("1: Create Reservation");
 			String number = in.nextLine();
+			if(number.equals("e") || number.equals("E")){
+				return 0;
+			}
 			try {
 				screen = Integer.parseInt(number);
 			} catch (NumberFormatException e) {
@@ -50,6 +53,11 @@ public class TUI implements IUI{
 		return new CustomerDTO(name, phone);
 	}
 
+	@Override
+	public void customerCreated(int customerId) {
+		out.println("Customer created and has been awarded with customerId "+customerId);
+	}
+	
 	@Override
 	public ReservationDTO createReservation() {
 		// TODO Auto-generated method stub

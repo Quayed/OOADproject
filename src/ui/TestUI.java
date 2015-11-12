@@ -23,6 +23,12 @@ public class TestUI implements IUI {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	public void customerCreated(int customerId) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
 	public void showBill(ReservationDTO reservation, List<BillItem> billItems) {

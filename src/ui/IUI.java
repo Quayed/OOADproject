@@ -9,6 +9,7 @@ import dal.dto.ReservationDTO;
 public interface IUI {
 	int selectScreen();
 	CustomerDTO createCustomer();
+	void customerCreated(int customerId);
 	ReservationDTO createReservation();
 	void showBill(ReservationDTO reservation, List<BillItem> billItems);
 }
