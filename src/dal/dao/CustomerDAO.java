@@ -1,16 +1,21 @@
 package dal.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import dal.dto.CustomerDTO;
 import dal.idao.ICustomerDAO;
 
 public class CustomerDAO implements ICustomerDAO{
+	
+	private List<CustomerDTO> customers = new ArrayList<CustomerDTO>();
+	private int increment = 0;
 
 	@Override
 	public int createCustomer(CustomerDTO customer) {
-		// TODO Auto-generated method stub
-		return 0;
+		customer.setCustomerId(++increment);
+		customers.add(customer);
+		return increment;
 	}
 
 	@Override

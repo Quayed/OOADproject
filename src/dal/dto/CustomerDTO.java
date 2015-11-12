@@ -5,6 +5,11 @@ public class CustomerDTO {
 	private String name;
 	private String phone;
 	
+	public CustomerDTO(String name, String phone) {
+		this.name = name;
+		this.phone = name;
+	}
+
 	public int getCustomerId() {
 		return customerId;
 	}
