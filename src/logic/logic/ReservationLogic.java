@@ -34,16 +34,27 @@ public class ReservationLogic implements IReservationLogic{
 		if(reservation == null){
 			
 		}
-		PitchDTO pitch = pitchDao.getPitch(reservation.getPitchId());
-		List<CamelRentDTO> camelRents = camelRentDAO.getCamelRents(reservationId);
 		
 		List<BillItem> billItems = new ArrayList<BillItem>();
-		billItems.add(new BillItem("Pitch price", getNumberOfDays(reservation), priceLogic.getPrice("price_pitch_"+pitch.getType(), reservation.getArrival())));
-		
 
-		priceLogic.getPrice("price_camel_rent", reservation.getArrival());
+		PitchDTO pitch = pitchDao.getPitch(reservation.getPitchId());
+		List<CamelRentDTO> camelRents = camelRentDAO.getCamelRents(reservationId);
+				
+		billItems.add(new BillItem("Pitch price", getNumberOfDays(reservation), priceLogic.getPrice("pitch_"+pitch.getType(), reservation.getArrival())));
+		billItems.add(new BillItem("Power usage", reservation.getPowerUsage(), priceLogic.getPrice("power", reservation.getArrival())));
+
 		
-		return null;
+		priceLogic.getPrice("power", reservation.getArrival());
+
+		
+		for (int i = 0; i < camelRents.size(); i++) {
+			CamelRentDTO camelRent = camelRents.get(i);
+			billItems.add(new BillItem("Cammel rent in "+camelRent.getHours()+" hours", camelRent.getCount(),
+									priceLogic.getPrice("camelrent", reservation.getArrival())*camelRent.getHours()));
+			
+		}
+				
+		return billItems;
 	}
 
 	@Override

@@ -3,9 +3,9 @@ package logic.logic;
 public class BillItem {
 	private String title;
 	private double unitPrice;
-	private int units;
+	private double units;
 	
-	public BillItem(String title, int units, double price) {
+	public BillItem(String title, double units, double price) {
 		this.title = title;
 		this.units = units;
 		this.unitPrice = unitPrice;
@@ -27,7 +27,7 @@ public class BillItem {
 		this.unitPrice = unitPrice;
 	}
 	
-	public int getUnits() {
+	public double getUnits() {
 		return units;
 	}
 	
