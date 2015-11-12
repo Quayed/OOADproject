@@ -2,9 +2,16 @@ package dal.dto;
 
 public class PitchDTO {
 	private int pitchId;
-	private int type;
+	private String type;
 	private int minPersons;
 	private int maxPersons;
+	
+	public PitchDTO(int pitchId, String type, int minPersons, int maxPersons) {
+		this.pitchId = pitchId;
+		this.type = type;
+		this.minPersons = minPersons;
+		this.maxPersons = maxPersons;
+	}
 	
 	public int getPitchId() {
 		return pitchId;
@@ -14,11 +21,11 @@ public class PitchDTO {
 		this.pitchId = pitchId;
 	}
 	
-	public int getType() {
+	public String getType() {
 		return type;
 	}
 	
-	public void setType(int type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	
