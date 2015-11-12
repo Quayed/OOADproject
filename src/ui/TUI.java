@@ -1,6 +1,8 @@
 package ui;
 
+import java.io.PrintStream;
 import java.util.List;
+import java.util.Scanner;
 
 import logic.logic.BillItem;
 import dal.dto.CustomerDTO;
@@ -8,16 +10,44 @@ import dal.dto.ReservationDTO;
 
 public class TUI implements IUI{
 
+	Scanner in = new Scanner(System.in);
+	PrintStream out = System.out;
+	
 	@Override
 	public int selectScreen() {
-		// TODO Auto-generated method stub
-		return 0;
+		int screen = 0;
+		while(screen == 0){
+			out.println("Select screen:");
+			out.println("1: Create Reservation");
+			String number = in.nextLine();
+			try {
+				screen = Integer.parseInt(number);
+			} catch (NumberFormatException e) {
+				screen = 0;
+			}
+			
+			if(screen == 1){
+				
+			}
+			else{
+				screen = 0;
+			}
+			
+			if(screen == 0)
+				out.println("Wrong input!");
+			
+		}
+		return screen;
 	}
 
 	@Override
 	public CustomerDTO createCustomer() {
-		// TODO Auto-generated method stub
-		return null;
+		out.println("## CREATE CUSTOMER ##");
+		out.println("Enter name");
+		String name = in.nextLine();
+		out.println("Enter phone");
+		String phone = in.nextLine();
+		return new CustomerDTO(name, phone);
 	}
 
 	@Override
