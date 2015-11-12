@@ -3,7 +3,6 @@ package dal.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import dal.DalException;
 import dal.dto.PitchDTO;
 import dal.idao.IPitchDAO;
 
@@ -30,7 +29,7 @@ public class PitchDAO implements IPitchDAO{
 	}
 
 	@Override
-	public PitchDTO getPitch(int pitchId) throws DalException {
+	public PitchDTO getPitch(int pitchId) {
 		return findPitch(pitchId);
 	}
 
@@ -40,14 +39,14 @@ public class PitchDAO implements IPitchDAO{
 		return null;
 	}
 	
-	private PitchDTO findPitch(int pitchId) throws DalException{
+	private PitchDTO findPitch(int pitchId){
 		for (int i = 0; i < pitches.size(); i++) {
 			PitchDTO pitch = pitches.get(i);
 			if(pitch.getPitchId() == pitchId){
 				return pitch;
 			}
 		}
-		throw new DalException("Pitch not found with pitchId "+pitchId);
+		return null;
 	}
 
 }

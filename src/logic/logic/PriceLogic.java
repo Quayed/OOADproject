@@ -1,13 +1,13 @@
 package logic.logic;
 
-import logic.ilogic.IPriceLogic;
 import dal.idao.IPriceDAO;
+import logic.ilogic.IPriceLogic;
 
 public class PriceLogic implements IPriceLogic{
 	private IPriceDAO priceDAO;
-	
+
 	@Override
-	public double getPrice(int priceId) {
+	public double getPrice(String priceId, String date) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

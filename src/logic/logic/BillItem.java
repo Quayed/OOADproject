@@ -5,6 +5,12 @@ public class BillItem {
 	private double unitPrice;
 	private int units;
 	
+	public BillItem(String title, int units, double price) {
+		this.title = title;
+		this.units = units;
+		this.unitPrice = unitPrice;
+	}
+
 	public String getTitle() {
 		return title;
 	}

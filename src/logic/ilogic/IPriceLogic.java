@@ -1,5 +1,5 @@
 package logic.ilogic;
 
 public interface IPriceLogic {
-	double getPrice(int priceId);
+	double getPrice(String priceId, String date);
 }
