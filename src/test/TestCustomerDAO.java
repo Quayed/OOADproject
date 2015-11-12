@@ -18,7 +18,7 @@ public class TestCustomerDAO {
 		
 		int customerId = customerDao.createCustomer(customer);
 		
-		assertEquals(1, customerId);
+		assertNotEquals(0, customerId);
 	}
 
 }
