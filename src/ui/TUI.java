@@ -1,6 +1,7 @@
 package ui;
 
 import java.io.PrintStream;
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Scanner;
 
@@ -66,7 +67,22 @@ public class TUI implements IUI{
 
 	@Override
 	public void showBill(ReservationDTO reservation, List<BillItem> billItems) {
-		// TODO Auto-generated method stub
+		double total = 0;
+		DecimalFormat df = new DecimalFormat("0.00");  
+		DecimalFormat dfUnit = new DecimalFormat("0.0");  
+		
+		out.println("----------------------------------------------");
+
+		for (int b = 0; b < billItems.size(); b++) {
+			BillItem bill = billItems.get(b);
+			total += bill.getSumPrice();
+			out.println(bill.getTitle()+"\t"+df.format(bill.getUnitPrice())+"\t\t"+dfUnit.format(bill.getUnits())+"\t"+df.format(bill.getSumPrice()));
+			
+		}
+		out.println("----------------------------------------------");
+		    
+		out.println("Total\t\t\t\t\t"+df.format(total));
+		
 		
 	}
 

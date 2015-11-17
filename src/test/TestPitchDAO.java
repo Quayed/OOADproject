@@ -19,20 +19,12 @@ public class TestPitchDAO {
 		
 		pitch = null;
 		pitchId = 1;
-		try {
-			pitch = pitchDAO.getPitch(pitchId);
-		} catch (DalException e) {
-			System.out.println(e.getMessage());
-		}
+		pitch = pitchDAO.getPitch(pitchId);
 		assertNotNull(pitch);
 		
 		pitch = null;
 		pitchId = 100000;
-		try {
-			pitch = pitchDAO.getPitch(pitchId);
-		} catch (DalException e) {
-			System.out.println(e.getMessage());
-		}
+		pitch = pitchDAO.getPitch(pitchId);
 		assertNull(pitch);
 	}
 

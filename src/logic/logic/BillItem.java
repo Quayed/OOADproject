@@ -1,14 +1,16 @@
 package logic.logic;
 
+import java.text.DecimalFormat;
+
 public class BillItem {
 	private String title;
-	private double unitPrice;
 	private double units;
+	private double unitPrice;
 	
 	public BillItem(String title, double units, double price) {
 		this.title = title;
 		this.units = units;
-		this.unitPrice = unitPrice;
+		this.unitPrice = price;
 	}
 
 	public String getTitle() {
@@ -36,6 +38,7 @@ public class BillItem {
 	}
 	
 	public double getSumPrice() {
-		return units*unitPrice;
+		double sum = units*unitPrice;
+		return sum;
 	}
 }
