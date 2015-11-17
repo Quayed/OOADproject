@@ -1,12 +1,17 @@
 package dal.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import dal.dto.CamelRentDTO;
+import dal.dto.CustomerDTO;
 import dal.idao.ICamelRentDAO;
 
 public class CamelRentDAO implements ICamelRentDAO{
 
+	private List<CamelRentDTO> camelRents = new ArrayList<CamelRentDTO>();
+	private int increment = 0;
+	
 	@Override
 	public int createCamelRent(CamelRentDTO camelRent) {
 		// TODO Auto-generated method stub
@@ -33,8 +38,12 @@ public class CamelRentDAO implements ICamelRentDAO{
 
 	@Override
 	public List<CamelRentDTO> getCamelRents(int reservationId) {
-		// TODO Auto-generated method stub
-		return null;
+		List<CamelRentDTO> camelRents = new ArrayList<CamelRentDTO>();
+		for (int c = 0; c < this.camelRents.size(); c++) {
+			if(this.camelRents.get(c).getReservationId() == reservationId)
+				camelRents.add(this.camelRents.get(c));
+		}
+		return camelRents;
 	}
 
 }

@@ -7,6 +7,7 @@ import logic.ilogic.IPriceLogic;
 import logic.ilogic.IReservationLogic;
 import dal.dao.CamelRentDAO;
 import dal.dao.PitchDAO;
+import dal.dao.ReservationDAO;
 import dal.dto.CamelRentDTO;
 import dal.dto.PitchDTO;
 import dal.dto.ReservationDTO;
@@ -18,7 +19,7 @@ public class ReservationLogic implements IReservationLogic{
 	
 	private IPriceLogic priceLogic = new PriceLogic();
 	
-	private IReservationDAO reservationDAO;
+	private IReservationDAO reservationDAO = new ReservationDAO();
 	private IPitchDAO pitchDao = new PitchDAO();
 	private ICamelRentDAO camelRentDAO = new CamelRentDAO();
 
@@ -32,7 +33,7 @@ public class ReservationLogic implements IReservationLogic{
 	public List<BillItem> getBill(int reservationId) {
 		ReservationDTO reservation = reservationDAO.getReservation(reservationId);
 		if(reservation == null){
-			
+			return null;
 		}
 		
 		List<BillItem> billItems = new ArrayList<BillItem>();
@@ -59,8 +60,7 @@ public class ReservationLogic implements IReservationLogic{
 
 	@Override
 	public List<ReservationDTO> getReservations() {
-		// TODO Auto-generated method stub
-		return null;
+		return reservationDAO.getReservations();
 	}
 	
 	private int getNumberOfDays(ReservationDTO reservation){

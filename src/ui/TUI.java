@@ -81,6 +81,7 @@ public class TUI implements IUI{
 	public int getReservationBill() {
 		int reservationId = 0;
 		out.println("## GET RESERVATION BILL ##");
+		out.println("Enter Reservation Id");
 		String number = in.nextLine();
 		
 		while(reservationId == 0){
@@ -114,7 +115,11 @@ public class TUI implements IUI{
 		out.println("----------------------------------------------");
 		    
 		out.println("Total\t\t\t\t\t"+df.format(total));
-		
+		out.println("----------------------------------------------");
+		out.println("----------------------------------------------");
+		out.println("");
+		out.println("");
+
 		
 	}
 
