@@ -36,4 +36,10 @@ public class TestUI implements IUI {
 
 	}
 
+	@Override
+	public int getReservationBill() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

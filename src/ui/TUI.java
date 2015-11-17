@@ -2,24 +2,38 @@ package ui;
 
 import java.io.PrintStream;
 import java.text.DecimalFormat;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
-import logic.logic.BillItem;
 import dal.dto.CustomerDTO;
 import dal.dto.ReservationDTO;
+import logic.logic.BillItem;
 
 public class TUI implements IUI{
 
 	Scanner in = new Scanner(System.in);
 	PrintStream out = System.out;
 	
+	Map<Integer, String> screens = new HashMap<Integer, String>();
+	
+	public TUI() {
+		screens.put(1, "Create Customer");
+		screens.put(2, "Create Reservation");
+		screens.put(3, "Create Get Reservation Bill");
+	}
+	
 	@Override
 	public int selectScreen() {
 		int screen = 0;
 		while(screen == 0){
 			out.println("Select screen:");
-			out.println("1: Create Reservation");
+			for (Iterator<Integer> iterator = screens.keySet().iterator(); iterator.hasNext();) {
+				int key = (int) iterator.next();
+				out.println(key+": "+screens.get(key));
+			}
 			String number = in.nextLine();
 			if(number.equals("e") || number.equals("E")){
 				return 0;
@@ -30,10 +44,7 @@ public class TUI implements IUI{
 				screen = 0;
 			}
 			
-			if(screen == 1){
-				
-			}
-			else{
+			if(screens.get(screen) == null){
 				screen = 0;
 			}
 			
@@ -65,6 +76,27 @@ public class TUI implements IUI{
 		return null;
 	}
 
+
+	@Override
+	public int getReservationBill() {
+		int reservationId = 0;
+		out.println("## GET RESERVATION BILL ##");
+		String number = in.nextLine();
+		
+		while(reservationId == 0){
+			try {
+				reservationId = Integer.parseInt(number);
+			} catch (NumberFormatException e) {
+				reservationId = 0;
+			}
+			
+			if(reservationId == 0)
+				out.println("Wrong input!");
+			
+		}
+		return reservationId;
+	}
+	
 	@Override
 	public void showBill(ReservationDTO reservation, List<BillItem> billItems) {
 		double total = 0;
@@ -85,5 +117,6 @@ public class TUI implements IUI{
 		
 		
 	}
+
 
 }

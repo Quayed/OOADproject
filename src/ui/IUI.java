@@ -11,5 +11,6 @@ public interface IUI {
 	CustomerDTO createCustomer();
 	void customerCreated(int customerId);
 	ReservationDTO createReservation();
+	int getReservationBill();
 	void showBill(ReservationDTO reservation, List<BillItem> billItems);
 }
