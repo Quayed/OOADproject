@@ -24,9 +24,8 @@ public class ReservationLogic implements IReservationLogic{
 	private ICamelRentDAO camelRentDAO = new CamelRentDAO();
 
 	@Override
-	public int CreateReservation() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int createReservation(ReservationDTO reservation) {
+		return reservationDAO.createReservation(reservation);
 	}
 
 	@Override

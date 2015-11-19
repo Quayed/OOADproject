@@ -11,6 +11,19 @@ public class ReservationDTO {
 	private String departure;
 	private double powerUsage;
 	
+	public ReservationDTO(int customerId, int pitchId, int adults, int children, int dogs, String arrival, String departure){
+		this.customerId = customerId;
+		this.pitchId = pitchId;
+		this.adults = adults;
+		this.children = children;
+		this.dogs = dogs;
+		this.arrival = arrival;
+		this.departure = departure;
+	}
+	
+	public ReservationDTO() {
+	}
+
 	public int getReservationId() {
 		return reservationId;
 	}

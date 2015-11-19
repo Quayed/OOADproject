@@ -38,6 +38,11 @@ public class Controller {
 			int customerId = customerLogic.createCustomer(customer);
 			ui.customerCreated(customerId);
 			break;
+		case 2:
+			ReservationDTO newreservation = ui.createReservation();
+			int newreservationId = reservationLogic.createReservation(newreservation);
+			ui.reservationCreated(newreservationId);
+			break;
 		case 3:
 			List<ReservationDTO> reservations = reservationLogic.getReservations();
 			ReservationDTO reservation = null;

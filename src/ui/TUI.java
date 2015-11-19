@@ -1,5 +1,6 @@
 package ui;
 
+import java.io.InputStream;
 import java.io.PrintStream;
 import java.text.DecimalFormat;
 import java.util.HashMap;
@@ -72,10 +73,28 @@ public class TUI implements IUI{
 	
 	@Override
 	public ReservationDTO createReservation() {
-		// TODO Auto-generated method stub
-		return null;
+		out.println("## CREATE RESERVATION");
+		out.println("Enter Pitch ID");
+		int pitchId = getInt();
+		out.println("Enter Customer ID");
+		int customerId = getInt();
+		out.println("Enter arrival date");
+		String arrival = getString();
+		out.println("Enter departure date");
+		String departure = getString();
+		out.println("Enter number of adults");
+		int adults = getInt();
+		out.println("Enter number of children");
+		int children = getInt();
+		out.println("Enter number of dogs+cats");
+		int dogs = getInt();
+		return new ReservationDTO(customerId, pitchId, adults, children, dogs,  arrival, departure);
 	}
-
+	
+	@Override
+	public void reservationCreated(int reservationId){
+		out.println("Reservation created and has been awarded with reservationId "+reservationId);
+	}
 
 	@Override
 	public int getReservationBill() {
@@ -123,5 +142,21 @@ public class TUI implements IUI{
 		
 	}
 
+	private String getString(){
+		return in.nextLine();
+	}
+	
+	private int getInt(){
+		int number;
+		while(true){
+			try {
+				number = Integer.parseInt(getString());
+				break;
+			} catch (NumberFormatException e) {
+				out.println("not a number");
+			}
+		}
+		return number;
+	}
 
 }

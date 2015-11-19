@@ -6,7 +6,7 @@ import logic.logic.BillItem;
 import dal.dto.ReservationDTO;
 
 public interface IReservationLogic {
-	int CreateReservation();
+	int createReservation(ReservationDTO reservation);
 	List<BillItem> getBill(int reservationID);
 	List<ReservationDTO> getReservations();
 }
