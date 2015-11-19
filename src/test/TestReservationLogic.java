@@ -54,7 +54,9 @@ public class TestReservationLogic {
 		assertTrue(foundReservation);
 		
 		
-		//TODO test af getBill
+		//TODO muligvis forbedring af test af getBill
+		assertNotNull(reservation.getBill(reservationId));
+		assertNull(reservation.getBill(9999999));
 		
 	}
 }
