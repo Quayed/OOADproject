@@ -22,19 +22,35 @@ public class PriceLogic implements IPriceLogic{
 		PriceDTO currentPrice = null;
 		Date currentPriceDate = null;
 		
+		String seasonSufix = isHighSeason(datePoint) ? "_hss" : "_lss";
+		
 		for (int p = 0; p < prices.size(); p++) {
-			if( prices.get(p).getPriceId().equals(priceId) ){
-				Date priceDate = parseStringToDate(prices.get(p).getApplicableFrom());
+			PriceDTO price = prices.get(p);
+			if( price.getPriceId().equals(priceId) || price.getPriceId().equals(priceId+seasonSufix)){
+				Date priceDate = parseStringToDate(price.getApplicableFrom());
 				if(priceDate.before(datePoint)){
 					if(currentPrice == null || priceDate.after(currentPriceDate)){
-						currentPrice = prices.get(p);
+						currentPrice = price;
 						currentPriceDate = parseStringToDate(currentPrice.getApplicableFrom());
 					}
 				}
 			}
 		}
 		
-		return 0;
+		if(currentPrice == null)
+			return 0;
+		
+		return currentPrice.getAmount();
+	}
+	
+	private boolean isHighSeason(Date datePoint) {
+		String year = new SimpleDateFormat("yyyy").format(datePoint);
+		
+		try {
+			return datePoint.after(parseStringToDate("12-06-"+year)) && datePoint.before(parseStringToDate("16-08-"+year));
+		} catch (NullPointerException e) {
+			return false;
+		}		
 	}
 	
 	private Date parseStringToDate(String date){
