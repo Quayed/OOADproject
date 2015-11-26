@@ -11,27 +11,29 @@ public class PitchDAO implements IPitchDAO{
 	List<PitchDTO> pitches = new ArrayList<PitchDTO>();
 	
 	public PitchDAO() {
-		//Liste over campingvogsplader
-		pitches.add(new PitchDTO(200, "caravan", 1, 8));
-		pitches.add(new PitchDTO(201, "caravan", 1, 8));
-		pitches.add(new PitchDTO(202, "caravan", 1, 8));
-		pitches.add(new PitchDTO(203, "caravan", 1, 8));
-		pitches.add(new PitchDTO(204, "caravan", 1, 8));
-		pitches.add(new PitchDTO(205, "caravan", 1, 8));
-		pitches.add(new PitchDTO(206, "caravan", 1, 8));
-		pitches.add(new PitchDTO(207, "caravan", 1, 8));
-		pitches.add(new PitchDTO(208, "caravan", 1, 8));
-		pitches.add(new PitchDTO(209, "caravan", 1, 8));
-		pitches.add(new PitchDTO(210, "caravan", 1, 8));
-		pitches.add(new PitchDTO(211, "caravan", 1, 8));
-		pitches.add(new PitchDTO(212, "caravan", 1, 8));
-		pitches.add(new PitchDTO(213, "caravan", 1, 8));
-		pitches.add(new PitchDTO(214, "caravan", 1, 8));
-		pitches.add(new PitchDTO(215, "caravan", 1, 8));
-		pitches.add(new PitchDTO(216, "caravan", 1, 8));
-		pitches.add(new PitchDTO(217, "caravan", 1, 8));
-		pitches.add(new PitchDTO(218, "caravan", 1, 8));
-		pitches.add(new PitchDTO(219, "caravan", 1, 8));
+		//Liste over små campingvognspladser
+		pitches.add(new PitchDTO(200, "caravan_small", 1, 8));
+		pitches.add(new PitchDTO(201, "caravan_small", 1, 8));
+		pitches.add(new PitchDTO(202, "caravan_small", 1, 8));
+		pitches.add(new PitchDTO(203, "caravan_small", 1, 8));
+		pitches.add(new PitchDTO(204, "caravan_small", 1, 8));
+		pitches.add(new PitchDTO(205, "caravan_small", 1, 8));
+		pitches.add(new PitchDTO(206, "caravan_small", 1, 8));
+		pitches.add(new PitchDTO(207, "caravan_small", 1, 8));
+		pitches.add(new PitchDTO(208, "caravan_small", 1, 8));
+		pitches.add(new PitchDTO(209, "caravan_small", 1, 8));
+		pitches.add(new PitchDTO(210, "caravan_small", 1, 8));
+		
+		//Liste over store campingvognpladser
+		pitches.add(new PitchDTO(211, "caravan_big", 1, 8));
+		pitches.add(new PitchDTO(212, "caravan_big", 1, 8));
+		pitches.add(new PitchDTO(213, "caravan_big", 1, 8));
+		pitches.add(new PitchDTO(214, "caravan_big", 1, 8));
+		pitches.add(new PitchDTO(215, "caravan_big", 1, 8));
+		pitches.add(new PitchDTO(216, "caravan_big", 1, 8));
+		pitches.add(new PitchDTO(217, "caravan_big", 1, 8));
+		pitches.add(new PitchDTO(218, "caravan_big", 1, 8));
+		pitches.add(new PitchDTO(219, "caravan_big", 1, 8));
 		
 		//Liste over teltpladser
 		pitches.add(new PitchDTO(100, "tent", 1, 8));
