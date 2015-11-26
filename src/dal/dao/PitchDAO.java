@@ -11,6 +11,7 @@ public class PitchDAO implements IPitchDAO{
 	List<PitchDTO> pitches = new ArrayList<PitchDTO>();
 	
 	public PitchDAO() {
+		//Liste over campingvogsplader
 		pitches.add(new PitchDTO(200, "caravan", 1, 8));
 		pitches.add(new PitchDTO(201, "caravan", 1, 8));
 		pitches.add(new PitchDTO(202, "caravan", 1, 8));
@@ -32,6 +33,7 @@ public class PitchDAO implements IPitchDAO{
 		pitches.add(new PitchDTO(218, "caravan", 1, 8));
 		pitches.add(new PitchDTO(219, "caravan", 1, 8));
 		
+		//Liste over teltpladser
 		pitches.add(new PitchDTO(100, "tent", 1, 8));
 		pitches.add(new PitchDTO(101, "tent", 1, 8));
 		pitches.add(new PitchDTO(102, "tent", 1, 8));
@@ -53,29 +55,33 @@ public class PitchDAO implements IPitchDAO{
 		pitches.add(new PitchDTO(118, "tent", 1, 8));
 		pitches.add(new PitchDTO(119, "tent", 1, 8));
 		
-		pitches.add(new PitchDTO(6, "cabin", 1, 2));
-		pitches.add(new PitchDTO(7, "cabin", 1, 2));
-		pitches.add(new PitchDTO(8, "cabin", 1, 2));
-		pitches.add(new PitchDTO(9, "cabin", 1, 2));
+		//Hytte nr. 6-9
+		pitches.add(new PitchDTO(6, "cabin1", 1, 2));
+		pitches.add(new PitchDTO(7, "cabin1", 1, 2));
+		pitches.add(new PitchDTO(8, "cabin1", 1, 2));
+		pitches.add(new PitchDTO(9, "cabin1", 1, 2));
 		
-		pitches.add(new PitchDTO(10, "cabin", 1, 2));
-		pitches.add(new PitchDTO(11, "cabin", 1, 2));
-		pitches.add(new PitchDTO(27, "cabin", 1, 2));
-		pitches.add(new PitchDTO(28, "cabin", 1, 2));
-		pitches.add(new PitchDTO(29, "cabin", 1, 2));
-		pitches.add(new PitchDTO(30, "cabin", 1, 2));
+		//Hytte nr. 10, 11 og 27-30
+		pitches.add(new PitchDTO(10, "cabin2", 1, 2));
+		pitches.add(new PitchDTO(11, "cabin2", 1, 2));
+		pitches.add(new PitchDTO(27, "cabin2", 1, 2));
+		pitches.add(new PitchDTO(28, "cabin2", 1, 2));
+		pitches.add(new PitchDTO(29, "cabin2", 1, 2));
+		pitches.add(new PitchDTO(30, "cabin2", 1, 2));
 		
-		pitches.add(new PitchDTO(40, "cabin", 1, 4));
-		pitches.add(new PitchDTO(41, "cabin", 1, 4));
+		//Hytte nr. 40 og 41
+		pitches.add(new PitchDTO(40, "cabin3", 1, 4));
+		pitches.add(new PitchDTO(41, "cabin3", 1, 4));
 		
-		//luksus hytter
-		pitches.add(new PitchDTO(44, "cabin", 4, 6));
-		pitches.add(new PitchDTO(45, "cabin", 4, 6));
+		//Luksus hytte nr. 44 og 45
+		pitches.add(new PitchDTO(44, "cabin4", 4, 6));
+		pitches.add(new PitchDTO(45, "cabin4", 4, 6));
 		
-		pitches.add(new PitchDTO(65, "cabin", 4, 6));
-		pitches.add(new PitchDTO(66, "cabin", 4, 6));
-		pitches.add(new PitchDTO(67, "cabin", 4, 6));
-		pitches.add(new PitchDTO(68, "cabin", 4, 6));
+		//Luksus hytte nr 65-68
+		pitches.add(new PitchDTO(65, "cabin4", 4, 6));
+		pitches.add(new PitchDTO(66, "cabin4", 4, 6));
+		pitches.add(new PitchDTO(67, "cabin4", 4, 6));
+		pitches.add(new PitchDTO(68, "cabin4", 4, 6));
 	}
 	
 	@Override
