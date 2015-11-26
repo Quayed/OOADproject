@@ -5,6 +5,12 @@ public class PriceDTO {
 	private double amount;
 	private String applicableFrom;
 	
+	public PriceDTO(String priceId, double amount, String applicableFrom){
+		this.priceId = priceId;
+		this.amount = amount;
+		this.applicableFrom = applicableFrom;
+	}
+	
 	public String getPriceId() {
 		return priceId;
 	}
