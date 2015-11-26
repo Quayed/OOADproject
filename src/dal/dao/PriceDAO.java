@@ -39,15 +39,13 @@ public class PriceDAO implements IPriceDAO{
 	}
 	
 	@Override
-	public int createPrice(PriceDTO price) {
+	public void createPrice(PriceDTO price) {
 		// TODO Auto-generated method stub
-		return 0;
 	}
 
 	@Override
 	public void updatePrice(PriceDTO price) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -58,8 +56,11 @@ public class PriceDAO implements IPriceDAO{
 
 	@Override
 	public List<PriceDTO> getPrices() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<PriceDTO> returnPrices = new ArrayList<PriceDTO>();
+		for(PriceDTO price : prices){
+			returnPrices.add(price);
+		}
+		return returnPrices;
 	}
 
 }
