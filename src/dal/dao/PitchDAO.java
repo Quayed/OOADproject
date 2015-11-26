@@ -113,7 +113,7 @@ public class PitchDAO implements IPitchDAO{
 		for (int i = 0; i < pitches.size(); i++) {
 			PitchDTO pitch = pitches.get(i);
 			if(pitch.getPitchId() == pitchId){
-				return pitch;
+				return new PitchDTO(pitch);
 			}
 		}
 		return null;

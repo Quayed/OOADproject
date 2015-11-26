@@ -36,7 +36,7 @@ public class ReservationDAO implements IReservationDAO{
 	public ReservationDTO getReservation(int reservationId) {
 		for (int r = 0; r < reservations.size(); r++) {
 			if(reservations.get(r).getReservationId() == reservationId)
-				return reservations.get(r);
+				return new ReservationDTO(reservations.get(r));
 		}
 		return null;
 	}

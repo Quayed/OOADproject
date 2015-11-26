@@ -58,7 +58,7 @@ public class PriceDAO implements IPriceDAO{
 	public List<PriceDTO> getPrices() {
 		ArrayList<PriceDTO> returnPrices = new ArrayList<PriceDTO>();
 		for(PriceDTO price : prices){
-			returnPrices.add(price);
+			returnPrices.add(new PriceDTO(price));
 		}
 		return returnPrices;
 	}

@@ -11,6 +11,12 @@ public class PriceDTO {
 		this.applicableFrom = applicableFrom;
 	}
 	
+	public PriceDTO(PriceDTO price) {
+		priceId = price.priceId;
+		amount = price.amount;
+		applicableFrom = price.applicableFrom;
+	}
+
 	public String getPriceId() {
 		return priceId;
 	}

@@ -13,6 +13,13 @@ public class PitchDTO {
 		this.maxPersons = maxPersons;
 	}
 	
+	public PitchDTO(PitchDTO pitch) {
+		pitchId = pitch.pitchId;
+		type = pitch.type;
+		minPersons = pitch.minPersons;
+		maxPersons = pitch.maxPersons;
+	}
+
 	public int getPitchId() {
 		return pitchId;
 	}
