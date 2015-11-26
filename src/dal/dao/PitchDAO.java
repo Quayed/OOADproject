@@ -80,10 +80,10 @@ public class PitchDAO implements IPitchDAO{
 		pitches.add(new PitchDTO(45, "cabin4", 4, 6));
 		
 		//Luksus hytte nr 65-68
-		pitches.add(new PitchDTO(65, "cabin4", 4, 6));
-		pitches.add(new PitchDTO(66, "cabin4", 4, 6));
-		pitches.add(new PitchDTO(67, "cabin4", 4, 6));
-		pitches.add(new PitchDTO(68, "cabin4", 4, 6));
+		pitches.add(new PitchDTO(65, "cabin5", 4, 6));
+		pitches.add(new PitchDTO(66, "cabin5", 4, 6));
+		pitches.add(new PitchDTO(67, "cabin5", 4, 6));
+		pitches.add(new PitchDTO(68, "cabin5", 4, 6));
 	}
 	
 	@Override

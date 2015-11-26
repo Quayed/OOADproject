@@ -4,13 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dal.dto.CamelRentDTO;
-import dal.dto.CustomerDTO;
 import dal.idao.ICamelRentDAO;
 
 public class CamelRentDAO implements ICamelRentDAO{
 
 	private List<CamelRentDTO> camelRents = new ArrayList<CamelRentDTO>();
-	private int increment = 0;
+	
+	public CamelRentDAO() {
+		camelRents.add(new CamelRentDTO(1, 3, 2));
+	}
 	
 	@Override
 	public int createCamelRent(CamelRentDTO camelRent) {
@@ -41,7 +43,7 @@ public class CamelRentDAO implements ICamelRentDAO{
 		List<CamelRentDTO> camelRents = new ArrayList<CamelRentDTO>();
 		for (int c = 0; c < this.camelRents.size(); c++) {
 			if(this.camelRents.get(c).getReservationId() == reservationId)
-				camelRents.add(this.camelRents.get(c));
+				camelRents.add(new CamelRentDTO(this.camelRents.get(c)));
 		}
 		return camelRents;
 	}

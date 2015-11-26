@@ -13,8 +13,14 @@ public class ReservationDAO implements IReservationDAO{
 	
 	public ReservationDAO() {
 		ReservationDTO reservation = new ReservationDTO();
-		reservation.setPitchId(1);
+		reservation.setPitchId(65);
 		reservation.setCustomerId(1);
+		reservation.setArrival("10-10-2015");
+		reservation.setAdults(2);
+		reservation.setChildren(5);
+		reservation.setDogs(2);
+		reservation.setDeparture("17-10-2015");
+		reservation.setPowerUsage(0.1);
 		createReservation(reservation);
 	}
 	

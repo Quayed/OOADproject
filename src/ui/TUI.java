@@ -122,20 +122,22 @@ public class TUI implements IUI{
 		double total = 0;
 		DecimalFormat df = new DecimalFormat("0.00");  
 		DecimalFormat dfUnit = new DecimalFormat("0.0");  
-		
-		out.println("----------------------------------------------");
+
+		out.println("Item\t\tAmount\t\tCount\tPrice");
+
+		out.println("-----------------------------------------------");
 
 		for (int b = 0; b < billItems.size(); b++) {
 			BillItem bill = billItems.get(b);
 			total += bill.getSumPrice();
-			out.println(bill.getTitle()+"\t"+df.format(bill.getUnitPrice())+"\t\t"+dfUnit.format(bill.getUnits())+"\t"+df.format(bill.getSumPrice()));
+			out.println(bill.getTitle()+(bill.getTitle().length()<8?"\t":"")+"\t"+df.format(bill.getUnitPrice())+"\t\t"+dfUnit.format(bill.getUnits())+"\t"+df.format(bill.getSumPrice()));
 			
 		}
-		out.println("----------------------------------------------");
+		out.println("-----------------------------------------------");
 		    
 		out.println("Total\t\t\t\t\t"+df.format(total));
-		out.println("----------------------------------------------");
-		out.println("----------------------------------------------");
+		out.println("-----------------------------------------------");
+		out.println("-----------------------------------------------");
 		out.println("");
 		out.println("");
 
