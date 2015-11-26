@@ -10,6 +10,12 @@ public class CustomerDTO {
 		this.phone = name;
 	}
 
+	public CustomerDTO(CustomerDTO customer) {
+		customerId = customer.customerId;
+		name = customer.name;
+		phone = customer.phone;
+	}
+
 	public int getCustomerId() {
 		return customerId;
 	}

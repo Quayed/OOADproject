@@ -13,6 +13,7 @@ public class CustomerDAO implements ICustomerDAO{
 
 	@Override
 	public int createCustomer(CustomerDTO customer) {
+		customer = new CustomerDTO(customer);
 		customer.setCustomerId(++increment);
 		customers.add(customer);
 		return increment;

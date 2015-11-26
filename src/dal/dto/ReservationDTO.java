@@ -21,6 +21,18 @@ public class ReservationDTO {
 		this.departure = departure;
 	}
 	
+	public ReservationDTO(ReservationDTO r){
+		reservationId = r.reservationId;
+		customerId = r.customerId;
+		pitchId = r.pitchId;
+		adults = r.adults;
+		children = r.children;
+		dogs = r.dogs;
+		arrival = r.arrival;
+		departure = r.departure;
+		powerUsage = r.powerUsage;
+	}
+	
 	public ReservationDTO() {
 	}
 

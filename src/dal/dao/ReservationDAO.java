@@ -20,6 +20,7 @@ public class ReservationDAO implements IReservationDAO{
 	
 	@Override
 	public int createReservation(ReservationDTO reservation) {
+		reservation = new ReservationDTO(reservation);
 		reservation.setReservationId(++increment);
 		reservations.add(reservation);
 		return increment;
