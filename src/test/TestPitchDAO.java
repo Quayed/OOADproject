@@ -1,10 +1,10 @@
 package test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
-import dal.DalException;
 import dal.dao.PitchDAO;
 import dal.dto.PitchDTO;
 import dal.idao.IPitchDAO;

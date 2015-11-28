@@ -1,7 +1,5 @@
 package logic.logic;
 
-import java.text.DecimalFormat;
-
 public class BillItem {
 	private String title;
 	private double units;

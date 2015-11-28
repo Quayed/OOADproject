@@ -13,11 +13,11 @@ public class ReservationDAO implements IReservationDAO{
 	
 	public ReservationDAO() {
 		ReservationDTO reservation = new ReservationDTO();
-		reservation.setPitchId(65);
+		reservation.setPitchId(6);
 		reservation.setCustomerId(1);
 		reservation.setArrival("10-10-2015");
 		reservation.setAdults(2);
-		reservation.setChildren(5);
+		reservation.setChildren(2);
 		reservation.setDogs(2);
 		reservation.setDeparture("17-10-2015");
 		reservation.setPowerUsage(0.1);
@@ -33,12 +33,6 @@ public class ReservationDAO implements IReservationDAO{
 	}
 
 	@Override
-	public void updateReservatoin(ReservationDTO reservation) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public ReservationDTO getReservation(int reservationId) {
 		for (int r = 0; r < reservations.size(); r++) {
 			if(reservations.get(r).getReservationId() == reservationId)
@@ -49,6 +43,10 @@ public class ReservationDAO implements IReservationDAO{
 
 	@Override
 	public List<ReservationDTO> getReservations() {
+		List<ReservationDTO> reservations = new ArrayList<ReservationDTO>();
+		for (int r = 0; r < this.reservations.size(); r++) {
+			reservations.add(new ReservationDTO(this.reservations.get(r)));
+		}
 		return reservations;
 	}
 
@@ -56,6 +54,12 @@ public class ReservationDAO implements IReservationDAO{
 	public List<ReservationDTO> getReservations(int customerId) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void updateReservatoin(ReservationDTO reservation) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
