@@ -23,7 +23,7 @@ public class ReservationLogic implements IReservationLogic{
 	private IPriceLogic priceLogic = new PriceLogic();
 	
 	private IReservationDAO reservationDAO = new ReservationDAO();
-	private IPitchDAO pitchDao = new PitchDAO();
+	private IPitchDAO pitchDAO = new PitchDAO();
 	private ICamelRentDAO camelRentDAO = new CamelRentDAO();
 
 	@Override
@@ -40,7 +40,7 @@ public class ReservationLogic implements IReservationLogic{
 		
 		List<BillItem> billItems = new ArrayList<BillItem>();
 
-		PitchDTO pitch = pitchDao.getPitch(reservation.getPitchId());
+		PitchDTO pitch = pitchDAO.getPitch(reservation.getPitchId());
 		List<CamelRentDTO> camelRents = camelRentDAO.getCamelRents(reservationId);
 					
 		String pitchType = pitch.getType();
@@ -76,9 +76,6 @@ public class ReservationLogic implements IReservationLogic{
 		
 		
 		billItems.add(new BillItem("Power usage", reservation.getPowerUsage(), priceLogic.getPrice("power", arrival)));
-
-		
-		priceLogic.getPrice("power", arrival);
 
 		
 		for (int i = 0; i < camelRents.size(); i++) {
