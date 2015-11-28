@@ -72,7 +72,7 @@ public class TUI implements IUI{
 	
 	@Override
 	public ReservationDTO createReservation() {
-		out.println("## CREATE RESERVATION");
+		out.println("## CREATE RESERVATION ##");
 		out.println("Enter Pitch ID");
 		int pitchId = getInt();
 		out.println("Enter Customer ID");
