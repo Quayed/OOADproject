@@ -1,13 +1,8 @@
 package logic.logic;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import logic.ilogic.IPriceLogic;
-import logic.ilogic.IReservationLogic;
 import dal.dao.CamelRentDAO;
 import dal.dao.PitchDAO;
 import dal.dao.ReservationDAO;
@@ -17,6 +12,8 @@ import dal.dto.ReservationDTO;
 import dal.idao.ICamelRentDAO;
 import dal.idao.IPitchDAO;
 import dal.idao.IReservationDAO;
+import logic.ilogic.IPriceLogic;
+import logic.ilogic.IReservationLogic;
 
 public class ReservationLogic implements IReservationLogic{
 	
@@ -50,7 +47,7 @@ public class ReservationLogic implements IReservationLogic{
 		int dogs = reservation.getDogs();
 
 		if(!pitchType.equals("tent")){
-			billItems.add(new BillItem("Pitch fee", getNumberOfDays(reservation), priceLogic.getPrice("pitch_"+pitchType, arrival)));			
+			billItems.add(new BillItem("Pitch fee", DateHelper.getNumberOfDays(reservation), priceLogic.getPrice("pitch_"+pitchType, arrival)));			
 		}
 		
 		if(pitchType.length() >= 5 && pitchType.substring(0, 5).equals("cabin")){
@@ -58,7 +55,7 @@ public class ReservationLogic implements IReservationLogic{
 				int extraPersons = adults+children - pitch.getMinPersons();
 				
 				if(extraPersons > 0){
-					billItems.add(new BillItem(""+extraPersons + " extra persons", getNumberOfDays(reservation), extraPersons*priceLogic.getPrice("extra_person", arrival)));
+					billItems.add(new BillItem(""+extraPersons + " extra persons", DateHelper.getNumberOfDays(reservation), extraPersons*priceLogic.getPrice("extra_person", arrival)));
 				}
 			}
 		}
@@ -91,23 +88,6 @@ public class ReservationLogic implements IReservationLogic{
 	@Override
 	public List<ReservationDTO> getReservations() {
 		return reservationDAO.getReservations();
-	}
-	
-	private int getNumberOfDays(ReservationDTO reservation){
-		Date d1 = parseStringToDate(reservation.getArrival());
-		Date d2 = parseStringToDate(reservation.getDeparture());
-		
-		int days = (int) ((d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24));
-		return days;
-	}
-	
-	private Date parseStringToDate(String date){
-		try {
-			return new SimpleDateFormat("dd-MM-yyyy").parse(date);
-		} catch (ParseException e) {
-			return null;
-		}
-	}
-	
+	}	
 
 }
