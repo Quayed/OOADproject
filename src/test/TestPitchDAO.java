@@ -18,7 +18,7 @@ public class TestPitchDAO {
 		int pitchId;
 		
 		pitch = null;
-		pitchId = 1;
+		pitchId = 200;
 		pitch = pitchDAO.getPitch(pitchId);
 		assertNotNull(pitch);
 		
