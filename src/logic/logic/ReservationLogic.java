@@ -61,13 +61,13 @@ public class ReservationLogic implements IReservationLogic{
 		}
 		else{
 			if(children > 0){
-				billItems.add(new BillItem("Children", children, priceLogic.getPrice("child", arrival)));
+				billItems.add(new BillItem("Children", children*DateHelper.getNumberOfDays(reservation), priceLogic.getPrice("child", arrival)));
 			}
 			if(adults > 0){
-				billItems.add(new BillItem("Adults", adults, priceLogic.getPrice("adult", arrival)));
+				billItems.add(new BillItem("Adults", adults*DateHelper.getNumberOfDays(reservation), priceLogic.getPrice("adult", arrival)));
 			}
 			if(dogs > 0){
-				billItems.add(new BillItem("Dogs", dogs, priceLogic.getPrice("dog", arrival)));
+				billItems.add(new BillItem("Dogs", dogs*DateHelper.getNumberOfDays(reservation), priceLogic.getPrice("dog", arrival)));
 			}
 		}
 		
